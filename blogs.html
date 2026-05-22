@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blogs — Karan Vishwakarma</title>
+<meta name="description" content="Notes on building Watch Party, hand-gesture recognition, Microsoft certifications, and lessons learned along the way."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#2563eb"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<a href="#blogs" class="skip-to-main">Skip to main content</a>
+
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html#hero" class="nav-logo">KV</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="blogs.html" class="is-active" aria-current="page">Blogs</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button id="sound-toggle" aria-label="Toggle sound effects">
+      <svg id="icon-sound-on" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M4 17h2.7l5.75 3.83c.17.11.36.17.55.17.16 0 .32-.04.47-.12.33-.17.53-.51.53-.88V4c0-.37-.2-.71-.53-.88-.32-.17-.72-.15-1.03.05L6.69 7h-2.7c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h3s.06-.02.09-.02c.06 0 .13-.02.19-.04a.6.6 0 0 0 .19-.08c.03-.01.06-.02.08-.03L12 5.87v12.26l-4.45-2.96s-.06-.02-.08-.03c-.06-.03-.12-.06-.19-.08-.06-.02-.13-.03-.19-.04-.03 0-.06-.02-.09-.02H4zm18 3c0-4.09-2.47-7.61-6-9.16v2.24c2.39 1.39 4 3.96 4 6.92s-1.61 5.53-4 6.92v2.24c3.53-1.55 6-5.07 6-9.16"/><path d="M18 12c0-1.77-.78-3.36-2-4.46v8.92c1.22-1.1 2-2.69 2-4.46"/></svg>
+      <svg id="icon-sound-off" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-4.09-2.47-7.61-6-9.16v2.24c2.39 1.39 4 3.96 4 6.92 0 1.85-.64 3.54-1.69 4.89l-1.42-1.42c.7-.98 1.12-2.17 1.12-3.47 0-1.77-.78-3.36-2-4.46v7.05l-2-2V4c0-.37-.2-.71-.53-.88-.32-.17-.72-.15-1.03.05L7.73 6.32 2.71 1.29 1.3 2.7l20 20 1.41-1.41-2.98-2.98A9.94 9.94 0 0 0 22 11.99Zm-10-1.41L9.17 7.76 12 5.87zm0 7.54-4.45-2.96s-.06-.02-.08-.03c-.06-.03-.12-.06-.19-.08s-.13-.03-.2-.04c-.03 0-.06-.02-.09-.02h-3V9h.76L3.02 7.27C2.41 7.61 2 8.26 2 9v6c0 1.1.9 2 2 2h2.7l5.75 3.83c.17.11.36.17.55.17.16 0 .32-.04.47-.12.33-.17.53-.51.53-.88v-1.76l-2-2z"/></svg>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M12 17.01c2.76 0 5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12s2.25 5.01 5.01 5.01M12 9c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01-3.01-1.35-3.01-3.01S10.34 9 12 9m1 10h-2v3h2zm0-17h-2v3h2zM2 11h3v2H2zm17 0h3v2h-3zM4.22 18.36l.71.71.71.71 1.06-1.06 1.06-1.06-.71-.71-.71-.71-1.06 1.06zM19.78 5.64l-.71-.71-.71-.71-1.06 1.06-1.06 1.06.71.71.71.71 1.06-1.06zm-12.02.7L6.7 5.28 5.64 4.22l-.71.71-.71.71L5.28 6.7l1.06 1.06.71-.71zm8.48 11.32 1.06 1.06 1.06 1.06.71-.71.71-.71-1.06-1.06-1.06-1.06-.71.71z"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.71 13.51c-.78.23-1.58.35-2.38.35-4.52 0-8.2-3.68-8.2-8.2 0-.8.12-1.6.35-2.38.11-.35.01-.74-.25-1s-.64-.36-1-.25A10.17 10.17 0 0 0 2 11.8C2 17.42 6.57 22 12.2 22c4.53 0 8.45-2.91 9.76-7.24.11-.35.01-.74-.25-1s-.64-.36-1-.25M12.2 20C7.68 20 4 16.32 4 11.8a8.15 8.15 0 0 1 4.18-7.15c-.03.34-.05.68-.05 1.02 0 5.62 4.57 10.2 10.2 10.2.34 0 .68-.02 1.02-.05C17.93 18.38 15.23 20 12.2 20M16 8l.94-2.06L19 5l-2.06-.94L16 2l-.94 2.06L13 5l2.06.94zm4.25-.5-.55 1.2-1.2.55 1.2.55.55 1.2.55-1.2 1.2-.55-1.2-.55z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<audio id="background-music" src="assets/audio/cozy-loop.mp3" type="audio/mpeg" loop preload="auto"></audio>
+
+<main>
+  <section id="blogs" class="fade-in">
+    <div class="section-label">Blogs</div>
+    <div class="page-intro">
+      <h1>Process &amp; experience</h1>
+      <p>Short write-ups on what I built, what went wrong, and what I'd do differently. These mirror the projects on my portfolio—not polished tutorials, just honest notes from the build.</p>
+    </div>
+
+    <div class="blog-list">
+
+      <article class="blog-card fade-in">
+        <div class="blog-meta">Cloud · 2025</div>
+        <h2>Shipping Watch Party on Azure</h2>
+        <p>The idea started simple: friends watch the same video at the same time. The hard part was playback sync when everyone's network and device behaved differently.</p>
+        <p>I leaned on Socket.IO for room state and events, Azure Blob for assets, and Metered for voice/video. The biggest lesson was designing reconnect flows—users drop Wi‑Fi mid-movie more often than you'd expect. Deploying to Azure Web Apps taught me to treat environment config and logging as part of the feature, not an afterthought.</p>
+      </article>
+
+      <article class="blog-card fade-in">
+        <div class="blog-meta">AI / Open Source · 2025</div>
+        <h2>Building the Hand Gesture Engine</h2>
+        <p>MediaPipe gave me landmarks quickly, but turning raw points into reliable gestures across lighting and hand sizes took iteration. I focused on configurable thresholds so others could tune behavior without forking the whole library.</p>
+        <p>Packaging for PyPI was its own project—README clarity, version bumps, and making the API feel predictable mattered as much as the CV logic. Publishing open source pushed me to write code I'd be comfortable maintaining, not just demo scripts.</p>
+      </article>
+
+      <article class="blog-card fade-in">
+        <div class="blog-meta">Android · 2024</div>
+        <h2>Slide Puzzle — touch, state, and polish</h2>
+        <p>Game logic was straightforward; UX wasn't. Invalid moves had to feel impossible without lag, and the board needed to stay readable on smaller screens. Kotlin plus ConstraintLayout kept layout predictable while I experimented with touch handling.</p>
+        <p>Finishing a small app end-to-end—logic, UI, and edge cases—gave me more confidence than reading another chapter on Android theory alone.</p>
+      </article>
+
+      <article class="blog-card fade-in">
+        <div class="blog-meta">Learning · 2023–2025</div>
+        <h2>Six Microsoft certs alongside a CS degree</h2>
+        <p>The IEP track at Parul lined up with Azure fundamentals, then AI and data certs. Studying for exams while building real projects (Watch Party, gesture engine) meant concepts stuck—Blob Storage wasn't abstract after I'd debugged uploads at 2 a.m.</p>
+        <p>The experience wasn't about collecting badges. It was learning to read docs, fail practice exams, and connect certification topics to code I was already writing. That rhythm—study, build, ship—is how I want to keep growing.</p>
+      </article>
+
+    </div>
+
+    <p class="blog-back fade-in"><a href="index.html#projects" class="about-link">← Back to portfolio</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Karan Vishwakarma · India</p>
+  <p>Built with HTML, CSS, JS &amp; care</p>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M8 12V4M4 8l4-4 4 4"/>
+  </svg>
+</button>
+
+<div id="custom-cursor"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Karan Vishwakarma — Portfolio</title>
+<meta name="description" content="CS undergrad building production-ready apps across Android, cloud (Azure), and AI. Six Microsoft certifications. Open to internships and collaborations."/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Karan Vishwakarma — Android · Cloud · AI"/>
+<meta property="og:description" content="CS undergrad building production-ready apps across Android, cloud (Azure), and AI. Six Microsoft certifications. Open to internships and collaborations."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://karanvishwakarma-1807.github.io/"/>
+<meta property="og:image" content="https://karanvishwakarma-1807.github.io/og-image.png"/>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Karan Vishwakarma — Android · Cloud · AI"/>
+<meta name="twitter:description" content="CS undergrad building production-ready apps across Android, cloud (Azure), and AI. Six Microsoft certifications. Open to internships and collaborations."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#2563eb"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- SKIP TO MAIN -->
+<a href="#hero" class="skip-to-main">Skip to main content</a>
+
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="#hero" class="nav-logo">KV</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button id="sound-toggle" aria-label="Toggle sound effects">
+      <svg id="icon-sound-on" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M4 17h2.7l5.75 3.83c.17.11.36.17.55.17.16 0 .32-.04.47-.12.33-.17.53-.51.53-.88V4c0-.37-.2-.71-.53-.88-.32-.17-.72-.15-1.03.05L6.69 7h-2.7c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h3s.06-.02.09-.02c.06 0 .13-.02.19-.04a.6.6 0 0 0 .19-.08c.03-.01.06-.02.08-.03L12 5.87v12.26l-4.45-2.96s-.06-.02-.08-.03c-.06-.03-.12-.06-.19-.08-.06-.02-.13-.03-.19-.04-.03 0-.06-.02-.09-.02H4zm18 3c0-4.09-2.47-7.61-6-9.16v2.24c2.39 1.39 4 3.96 4 6.92s-1.61 5.53-4 6.92v2.24c3.53-1.55 6-5.07 6-9.16"/><path d="M18 12c0-1.77-.78-3.36-2-4.46v8.92c1.22-1.1 2-2.69 2-4.46"/></svg>
+      <svg id="icon-sound-off" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-4.09-2.47-7.61-6-9.16v2.24c2.39 1.39 4 3.96 4 6.92 0 1.85-.64 3.54-1.69 4.89l-1.42-1.42c.7-.98 1.12-2.17 1.12-3.47 0-1.77-.78-3.36-2-4.46v7.05l-2-2V4c0-.37-.2-.71-.53-.88-.32-.17-.72-.15-1.03.05L7.73 6.32 2.71 1.29 1.3 2.7l20 20 1.41-1.41-2.98-2.98A9.94 9.94 0 0 0 22 11.99Zm-10-1.41L9.17 7.76 12 5.87zm0 7.54-4.45-2.96s-.06-.02-.08-.03c-.06-.03-.12-.06-.19-.08s-.13-.03-.2-.04c-.03 0-.06-.02-.09-.02h-3V9h.76L3.02 7.27C2.41 7.61 2 8.26 2 9v6c0 1.1.9 2 2 2h2.7l5.75 3.83c.17.11.36.17.55.17.16 0 .32-.04.47-.12.33-.17.53-.51.53-.88v-1.76l-2-2z"/></svg>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M12 17.01c2.76 0 5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12s2.25 5.01 5.01 5.01M12 9c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01-3.01-1.35-3.01-3.01S10.34 9 12 9m1 10h-2v3h2zm0-17h-2v3h2zM2 11h3v2H2zm17 0h3v2h-3zM4.22 18.36l.71.71.71.71 1.06-1.06 1.06-1.06-.71-.71-.71-.71-1.06 1.06zM19.78 5.64l-.71-.71-.71-.71-1.06 1.06-1.06 1.06.71.71.71.71 1.06-1.06zm-12.02.7L6.7 5.28 5.64 4.22l-.71.71-.71.71L5.28 6.7l1.06 1.06.71-.71zm8.48 11.32 1.06 1.06 1.06 1.06.71-.71.71-.71-1.06-1.06-1.06-1.06-.71.71z"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.71 13.51c-.78.23-1.58.35-2.38.35-4.52 0-8.2-3.68-8.2-8.2 0-.8.12-1.6.35-2.38.11-.35.01-.74-.25-1s-.64-.36-1-.25A10.17 10.17 0 0 0 2 11.8C2 17.42 6.57 22 12.2 22c4.53 0 8.45-2.91 9.76-7.24.11-.35.01-.74-.25-1s-.64-.36-1-.25M12.2 20C7.68 20 4 16.32 4 11.8a8.15 8.15 0 0 1 4.18-7.15c-.03.34-.05.68-.05 1.02 0 5.62 4.57 10.2 10.2 10.2.34 0 .68-.02 1.02-.05C17.93 18.38 15.23 20 12.2 20M16 8l.94-2.06L19 5l-2.06-.94L16 2l-.94 2.06L13 5l2.06.94zm4.25-.5-.55 1.2-1.2.55 1.2.55.55 1.2.55-1.2 1.2-.55-1.2-.55z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<audio id="background-music" src="assets/audio/cozy-loop.mp3" type="audio/mpeg" loop preload="auto"></audio>
+
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Open to opportunities
+    </div>
+    <h1>Karan<br/><span>Vishwakarma</span></h1>
+    <p class="hero-sub">
+      <span id="typing-text">Android Developer</span><span class="typing-cursor">|</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">
+        View projects
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary">Get in touch</a>
+    </div>
+    <div class="hero-links">
+        <a href="https://github.com/KaranVishwakarma-1807" target="_blank" rel="noopener noreferrer" class="hero-link">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.08-2.7-1.08-.36-.92-.88-1.17-.88-1.17-.72-.49.05-.48.05-.48.8.06 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82a7.6 7.6 0 012 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/KaranVishwakarma-1807
+      </a>
+      <a href="https://linkedin.com/in/karan-vishwakarma7872642a5" target="_blank" rel="noopener noreferrer" class="hero-link">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:karanallen625@outlook.com" class="hero-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5l7 5 7-5"/></svg>
+        karanallen625@outlook.com
+      </a>
+    </div>
+    </div><!-- /.hero-content -->
+  </section>
+
+  <hr class="divider"/>
+
+  <section id="about" class="fade-in">
+    <div class="section-label">About</div>
+    <div class="about-inner">
+      <p>I'm Karan Vishwakarma, a B.Tech Computer Science student at Parul University (Microsoft IEP track) based in India. I build across Android, cloud, and AI—from Kotlin apps to Azure deployments and computer-vision tooling.</p>
+      <p>Outside coursework I've earned six Microsoft certifications and shipped projects like Watch Party and an open-source hand-gesture library. I'm open to internships and collaborations where I can learn quickly and deliver working software.</p>
+      <p><a href="blogs.html" class="about-link">Read how I built these projects →</a></p>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+  <section id="projects" class="fade-in">
+    <div class="section-label">Projects</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="android" aria-pressed="false">Android</button>
+      <button class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud</button>
+      <button class="filter-btn" data-filter="ai" aria-pressed="false">AI</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-tags="cloud" data-expanded="false">
+        <div class="project-icon">☁️</div>
+        <h3>Watch Party</h3>
+        <p>Browser-based watch party platform with real-time media sync, group chat, voice/video calling, and YouTube streaming — deployed on Microsoft Azure.</p>
+        <div class="project-tags">
+          <span class="tag">Azure</span>
+          <span class="tag">WebSockets</span>
+          <span class="tag">Blob Storage</span>
+          <span class="tag">Metered API</span>
+        </div>
+        <a href="https://github.com/KaranVishwakarma-1807/WatchParty" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 11L11 2M5 2h6v6"/></svg>
+        </a>
+        <button class="card-toggle" aria-expanded="false" aria-controls="details-watchparty">Details ▾</button>
+        <div id="details-watchparty" class="card-detail">
+          <p><strong>Tech Stack:</strong> Node.js, Socket.IO, Azure Blob Storage, Azure Web Apps, Metered Video API, YouTube IFrame API</p>
+          <p><strong>What I learned:</strong> Real-time synchronisation across multiple clients, WebSocket event design, and deploying stateful apps on Azure.</p>
+          <p><strong>Challenges:</strong> Keeping media playback in sync across varying network latencies and handling reconnection gracefully.</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="ai" data-expanded="false">
+        <div class="project-icon">🤚</div>
+        <h3>Hand Gesture Engine</h3>
+        <p>Open-source Python package for real-time gesture recognition using MediaPipe and OpenCV, with configurable thresholds and plug-and-play modular architecture.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">MediaPipe</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Open Source</span>
+        </div>
+        <a href="https://github.com/KaranVishwakarma-1807/hand-gesture-engine" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 11L11 2M5 2h6v6"/></svg>
+        </a>
+        <button class="card-toggle" aria-expanded="false" aria-controls="details-gesture">Details ▾</button>
+        <div id="details-gesture" class="card-detail">
+          <p><strong>Tech Stack:</strong> Python, MediaPipe Hands, OpenCV, PyPI packaging</p>
+          <p><strong>What I learned:</strong> Landmark-based gesture classification, packaging a Python library for public distribution, and writing configurable APIs.</p>
+          <p><strong>Challenges:</strong> Achieving reliable detection across different lighting conditions and hand sizes without retraining the model.</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="android" data-expanded="false">
+        <div class="project-icon">🧩</div>
+        <h3>Slide Puzzle</h3>
+        <p>Interactive touch-based slide puzzle game for Android built in Kotlin, featuring movement logic, board state management, and puzzle completion validation.</p>
+        <div class="project-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Android</span>
+          <span class="tag">Game Dev</span>
+        </div>
+        <a href="https://github.com/KaranVishwakarma-1807/SlidePuzzle" target="_blank" rel="noopener noreferrer" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 11L11 2M5 2h6v6"/></svg>
+        </a>
+        <button class="card-toggle" aria-expanded="false" aria-controls="details-puzzle">Details ▾</button>
+        <div id="details-puzzle" class="card-detail">
+          <p><strong>Tech Stack:</strong> Kotlin, Android SDK, ConstraintLayout, custom touch event handling</p>
+          <p><strong>What I learned:</strong> Implementing tile-swap logic, managing 2D board state, and validating puzzle completion efficiently.</p>
+          <p><strong>Challenges:</strong> Ensuring smooth touch interactions and preventing invalid moves while keeping the UI responsive.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- EDUCATION TIMELINE -->
+  <section id="education" class="fade-in">
+    <div class="section-label">Education</div>
+    <div class="timeline">
+
+      <div class="timeline-entry fade-in" style="transition-delay: 0.1s">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2023 - Current</div>
+          <h3 class="timeline-institution">Parul University, Vadodara, Gujarat</h3>
+          <div class="timeline-qualification">B.Tech — Computer Science &amp; Engineering - IEP (Microsoft)</div>
+          <p class="timeline-highlight">Six Microsoft certifications earned alongside coursework; built production-ready cloud and AI projects.</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry fade-in" style="transition-delay: 0.2s">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2022 - 2023</div>
+          <h3 class="timeline-institution">Kendriya Vidyalaya No.2, GCF, Jabalpur, Madhya Pradesh</h3>
+          <div class="timeline-qualification">Class XII — Science (PCM + CS)</div>
+          <p class="timeline-highlight">First exposure to programming sparked a lasting interest in software development.</p>
+          <p class="timeline-highlight">Became School Captain</p>
+        </div>
+      </div>
+
+      <div class="timeline-entry fade-in" style="transition-delay: 0.3s">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2020 - 2021</div>
+          <h3 class="timeline-institution">Kendriya Vidyalaya No.1, AFS, Suratgrah, Rajasthan</h3>
+          <div class="timeline-qualification">Class X</div>
+          <p class="timeline-highlight">Achieved distinction; Developed a strong foundation in mathematics and physics that underpins algorithmic thinking.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- SKILLS & CERTS -->
+  <section id="skills" class="fade-in">
+    <div class="section-label">Skills &amp; Certifications</div>
+    <div class="skills-layout">
+      <div>
+        <div class="skills-group">
+          <h3>Languages</h3>
+          <div class="skills-chips">
+            <span class="chip">Python</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Kotlin</span>
+            <span class="chip">Java</span>
+            <span class="chip">SQL</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">P5.js</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Frameworks &amp; Tools</h3>
+          <div class="skills-chips">
+            <span class="chip">Flask</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">SQLAlchemy</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">Android Studio</span>
+            <span class="chip">Git</span>
+            <span class="chip">VS Code</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Cloud &amp; AI</h3>
+          <div class="skills-chips">
+            <span class="chip">Microsoft Azure</span>
+            <span class="chip">Azure Blob Storage</span>
+            <span class="chip">Azure Web Apps</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">MediaPipe</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skills-group">
+          <h3>Microsoft Certifications</h3>
+          <div class="cert-grid">
+            <div class="cert-badge-card">
+              <span class="cert-badge">AZ-900</span>
+              <span class="cert-name">Azure Fundamentals</span>
+              <a href="https://drive.google.com/file/d/1Nr_sngKWVxkgLLAtznEVMURdMsTtmDvq/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+            <div class="cert-badge-card">
+              <span class="cert-badge">AI-900</span>
+              <span class="cert-name">Azure AI Fundamentals</span>
+              <a href="https://drive.google.com/file/d/1PBKj6dda6TxkqepxqXaW0C1OZ_tCIZIm/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+            <div class="cert-badge-card">
+              <span class="cert-badge">AI-102</span>
+              <span class="cert-name">Azure AI Engineer Associate</span>
+              <a href="https://drive.google.com/file/d/1Tad9hoNYVCa8zcaLdzSZ_AsznlD0yj4D/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+            <div class="cert-badge-card">
+              <span class="cert-badge">PL-900</span>
+              <span class="cert-name">Power Platform Fundamentals</span>
+              <a href="https://drive.google.com/file/d/1-DRpCTWxleyBk-_8nn78sT7WCL09IMBk/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+            <div class="cert-badge-card">
+              <span class="cert-badge">DP-900</span>
+              <span class="cert-name">Azure Data Fundamentals</span>
+              <a href="https://drive.google.com/file/d/1J9HFnUwMkeNkVzP54woD6DmaVmfUOopj/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+            <div class="cert-badge-card">
+              <span class="cert-badge">SC-900</span>
+              <span class="cert-name">Security, Compliance &amp; Identity</span>
+              <a href="https://drive.google.com/file/d/1hMUkMDh0PLPAgvnMmNV4J0jtSAq7PG2a/view?usp=sharing" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in">
+    <div class="section-label">Contact</div>
+    <div class="contact-inner">
+      <h2>Let's <span>work together</span></h2>
+      <p>I'm currently open to internships, job opportunities, and interesting project collaborations. Feel free to reach out through any of the channels below.</p>
+      <div class="contact-links">
+        <a href="mailto:karanallen625@outlook.com" class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5l7 5 7-5"/></svg>
+          </div>
+          karanallen625@outlook.com
+        </a>
+        <a href="https://github.com/KaranVishwakarma-1807" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.08-2.7-1.08-.36-.92-.88-1.17-.88-1.17-.72-.49.05-.48.05-.48.8.06 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82a7.6 7.6 0 012 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </div>
+          github.com/KaranVishwakarma-1807
+        </a>
+        <a href="https://linkedin.com/in/karan-vishwakarma7872642a5" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+          </div>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Karan Vishwakarma · India</p>
+  <p>Built with HTML, CSS, JS &amp; care</p>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M8 12V4M4 8l4-4 4 4"/>
+  </svg>
+</button>
+
+<div id="custom-cursor"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
